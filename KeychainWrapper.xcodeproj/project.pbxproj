@@ -10,6 +10,9 @@
 		1D4ADBCE252F5BC8005E2873 /* KeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4ADBC4252F5BC8005E2873 /* KeychainWrapper.framework */; };
 		1D4ADBD3252F5BC8005E2873 /* KeychainWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4ADBD2252F5BC8005E2873 /* KeychainWrapperTests.swift */; };
 		1D4ADBD5252F5BC8005E2873 /* KeychainWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4ADBC7252F5BC8005E2873 /* KeychainWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D4ADBE4252F5C22005E2873 /* KeychainOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4ADBE3252F5C22005E2873 /* KeychainOperations.swift */; };
+		1D4ADBE8252F5C4D005E2873 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4ADBE7252F5C4D005E2873 /* KeychainWrapper.swift */; };
+		1D4ADBEC252F5C6D005E2873 /* KeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4ADBEB252F5C6D005E2873 /* KeychainConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		1D4ADBCD252F5BC8005E2873 /* KeychainWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4ADBD2252F5BC8005E2873 /* KeychainWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapperTests.swift; sourceTree = "<group>"; };
 		1D4ADBD4252F5BC8005E2873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D4ADBE3252F5C22005E2873 /* KeychainOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainOperations.swift; sourceTree = "<group>"; };
+		1D4ADBE7252F5C4D005E2873 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		1D4ADBEB252F5C6D005E2873 /* KeychainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 		1D4ADBC6252F5BC8005E2873 /* KeychainWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				1D4ADBE2252F5BF1005E2873 /* Main */,
+				1D4ADBE1252F5BE2005E2873 /* Operations */,
+				1D4ADBE0252F5BD3005E2873 /* Constants */,
 				1D4ADBC7252F5BC8005E2873 /* KeychainWrapper.h */,
 				1D4ADBC8252F5BC8005E2873 /* Info.plist */,
 			);
@@ -84,6 +93,30 @@
 				1D4ADBD4252F5BC8005E2873 /* Info.plist */,
 			);
 			path = KeychainWrapperTests;
+			sourceTree = "<group>";
+		};
+		1D4ADBE0252F5BD3005E2873 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1D4ADBEB252F5C6D005E2873 /* KeychainConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		1D4ADBE1252F5BE2005E2873 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				1D4ADBE3252F5C22005E2873 /* KeychainOperations.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		1D4ADBE2252F5BF1005E2873 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1D4ADBE7252F5C4D005E2873 /* KeychainWrapper.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +180,7 @@
 				TargetAttributes = {
 					1D4ADBC3252F5BC7005E2873 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					1D4ADBCC252F5BC8005E2873 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -194,6 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4ADBE4252F5C22005E2873 /* KeychainOperations.swift in Sources */,
+				1D4ADBE8252F5C4D005E2873 /* KeychainWrapper.swift in Sources */,
+				1D4ADBEC252F5C6D005E2873 /* KeychainConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +378,7 @@
 		1D4ADBD9252F5BC8005E2873 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
@@ -357,6 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nut.KeychainWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +404,7 @@
 		1D4ADBDA252F5BC8005E2873 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
@@ -389,6 +429,7 @@
 		1D4ADBDC252F5BC8005E2873 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = KeychainWrapperTests/Info.plist;
@@ -407,6 +448,7 @@
 		1D4ADBDD252F5BC8005E2873 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = KeychainWrapperTests/Info.plist;
