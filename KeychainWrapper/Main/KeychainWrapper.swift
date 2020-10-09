@@ -6,7 +6,7 @@
 //
 
 import Foundation
-internal class KeychainWrapper {
+public class KeychainWrapper {
     public static func get(account: String) throws -> Data? {
         if try KeychainOperations.exist(account: account) {
             return try KeychainOperations.retreive(account: account)
